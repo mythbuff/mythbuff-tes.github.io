@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TESDND Character Sheet</title>
+    <link href="Style/style.css" type="text/css" rel="stylesheet">
+    <script>
+    function saveEdits() {
+
+//get the editable element
+var editElem = document.getElementById("edit");
+
+//get the edited element content
+var userVersion = editElem.innerHTML;
+
+//save the content to local storage
+localStorage.userEdits = userVersion;
+
+//write a confirmation to the user
+document.getElementById("update").innerHTML="Edits saved!";
+
+}
+    </script>
+    </head>
+    
+    <body>
+        <div>
+            <table border="1" align="center">
+                <tr>
+                    <th scope="row">Name: </th>
+                        <td>
+                            <div contenteditable="true" id="edit">Character name</div>
+                            <input type="button" value="save my edits" onclick="saveEdits()"/>
+                            <div id="update"> Edit the text and click to save for next time </div>
+                        </td>
+                            
+                        
+                        <td scope="row"><strong>Race: </strong></th>
+                <td>
+                    <form>
+                    <select id="Race" name="Race" class="first-line">
+            
+                        <option value="altmer">Altmer (High Elf)</option>
+                        <option value="argonian">Argonian</option>
+                        <option value="bosmer">Bosmer (Wood Elf)</option>
+                        <option value="breton">Breton</option>
+                        <option value="dunmer">Dunmer (Dark Elf)</option>
+                        <option value="imperial">Imperial</option>
+                        <option value="khajiit">Khajiit</option>
+                        <option value="nord">Nord</option>
+                        <option value="orsimer">Orsimer (Orc)</option>
+                        <option value="reguard">Redguard</option>
+                        
+                    </select>
+                    </form>
+                </td>
+                <td scope="row"><strong>Class: </strong></td>
+                <td>
+                    <form class="first-line">
+                    <select id="Race" name="Race" class="first-line">
+                                    
+                        <option value="Acrobat">Acrobat</option>
+                        <option value="Agent">Agent</option>
+                        <option value="Archer">Archer</option>
+                        <option value="Assassin">Assassin</option>
+                        <option value="Barbarian">Barbarian</option>
+                        <option value="Bard">Bard</option>
+                        <option value="Battlemage">Battlemage</option>
+                        <option value="Crusader">Crusader</option>
+                        <option value="Healer">Healer</option>
+                        <option value="Knight">Knight</option>
+                        <option value="Mage">Mage</option>
+                        <option value="Monk">Monk</option>
+                        <option value="Nightblade">Nightblade</option>
+                        <option value="Pilgrim">Pilgrim</option>
+                        <option value="Rogue">Rogue</option>
+                        <option value="Scout">Scout</option>
+                        <option value="Sorcerer">Sorcerer</option>
+                        <option value="Spellsword">Spellsword</option>
+                        <option value="Thief">Thief</option>
+                        <option value="Warrior">Warrior</option>
+                        <option value="Witchhunter">Witchhunter</option>
+    
+                    </select>
+                    </form>
+                </td>
+                <td><strong>Class Level: </strong></td>
+                <td>
+                    <input type="number" min="0" max="25" step="1">
+                </td>
+                <tr>
+                    <th>Experience: </th>
+                    <td>
+                        <input type="number" min="0" max="100,000">
+                    </td>
+                    <td><strong>Character Level: </strong></td>
+                    <td>
+                        <input type="number" min="1" max="100" step="1">
+                    </td>
+                    <td><strong>Passive Perception: </strong></td>
+                    <td>
+                        <input type="number" min="1" max="30" step="1">
+                    </td>
+                    <td><strong>Speed: </strong></td>
+                    <td><input type="number" min="1" max="30" step="1"></td>
+                </tr>
+            </table>
+          </div>
+        <br>
+        <div>
+            <table border="1" align="center">
+                    <td colspan="2">Attributes</td>
+                    <td colspan="1">Armor</td>
+                    <td colspan="3">Abilities</td>
+                <tr>
+                        <!--ATTRIBUTES-->
+                    <th class="str_id-color" scope="row">Strength</th>
+                        <td>
+                            <label for="str_mod">Mod</label>
+                            <input id="str_mod" type="number" min="-20" max="20">
+                            <br>
+                            <label for="str_base">Base</label>
+                            <input id="str_base" type="number" min="-20" max="20">
+                        </td>
+                        <!--ARMOR-->
+                        <td>
+                            <label for="equip_head" class="size"><strong>Head</strong></label>
+                            <input id="equip_head" type="text"><input type="number" min="0" max="20" name="head_ac">AC
+                        </td>
+                        <!--ABILITIES-->
+                        <td rowspan="2" colspan="3">
+                            <label for="ability_name">Ability: </label>
+                            <input type="text" id="ability_name">
+                            <span>
+                                <label for="ability_use">Description: </label>
+                                <input type="text" id="ability_use">
+                            </span>
+                            <br>
+                            <br>
+                            <label for="ability_name">Ability: </label>
+                            <input type="text" id="ability_name">
+                            <span>
+                                <label for="ability_use">Description: </label>
+                                <input type="text" id="ability_use">
+                            </span>
+                            <br>
+                            <br>
+                            <label for="ability_name">Ability: </label>
+                            <input type="text" id="ability_name">
+                            <span>
+                                <label for="ability_use">Description: </label>
+                                <input type="text" id="ability_use">
+                            </span>
+                            <br>
+                            <br>
+                            <label for="ability_name">Ability: </label>
+                            <input type="text" id="ability_name">
+                            <span>
+                                <label for="ability_use">Description: </label>
+                                <input type="text" id="ability_use">
+                            </span>
+                            <br>
+                            <br>
+                        </td>
+                </tr>
+                <tr>
+                    <th class="int_id-color" scope="row">Intelligence</th>
+                        <td>
+                            <label for="str_mod">Mod</label>
+                            <input id="str_mod" type="number" min="-20" max="20">
+                            <br>
+                            <label for="str_base">Base</label>
+                            <input id="str_base" type="number" min="-20" max="20">
+                        </td>
+                        <!--ARMOR-->
+                        <td>
+                            <label for="equip_body" class="size"><strong>Body</strong></label>
+                            <input id="equip_body" type="text"><input type="number" min="0" max="20" name="body_ac">AC
+                        </td>
+                </tr>
+                <tr>
+                    <th class="wil_id-color" scope="row">Willpower</th>
+                        <td>
+                            <label for="str_mod">Mod</label>
+                            <input id="str_mod" type="number" min="-20" max="20">
+                            <br>
+                            <label for="str_base">Base</label>
+                            <input id="str_base" type="number" min="-20" max="20">
+                       </td>
+                       <!--ARMOR-->
+                       <td>
+                            <label for="equip_hands" class="size"><strong>Hands</strong></label>
+                            <input id="equip_hands" type="text"><input type="number" min="0" max="20" name="hands_ac">AC
+                        </td>
+                        <td colspan="1">
+                                <label for="max_magicka">Max Magicka: </label>
+                                <input id="max_magicka" type="number" min="0" max="100">
+                                <br>
+                                <label for="current_magicka">Current Magicka: </label>
+                                <input id="max_magicka" type="number" min="0" max="100">
+                            </td>
+                                <td colspan="1">
+                                <label for="gold">Gold: </label>
+                                <input id="gold" type="number" min="0" max="1000">
+                            </td>
+                            <td rowspan="2" colspan="1">
+                                <label for="diety">Diety: </label>
+                                <select>
+                                    <option value="akatosh">Akatosh, Dragon God of Time</option>
+                                    <option value="almalexia">Almalexia</option>
+                                    <option value="arkay">Arkay, God of the Cylce of Life and Death
+                                    <option value="azura">Azura, Goddess of Dusk and Dawn</option>
+                                    <option value="bann-dar">Baan Dar</option>
+                                    <option value="boethiah">Boethiah</option>
+                                    <option value="clavicus-vile">Clavicus Vile</option>
+                                    <option value="dibella">Dibella</option>
+                                    <option value="hermaeus-mora">Hermaeus Mora</option>
+                                    <option value="hircine">Hircine</option>
+                                    <option value="julianos">Julianos, God of Wisdom and Logic</option>
+                                    <option value="kynareth">Kynareth</option>
+                                    <option value="kyne">Kyne, Kiss At The End</option>
+                                    <option value="lorkhan">Lorkhan</option>
+                                    <option value="magnus">Magnus, Magus</option>
+                                    <option value="malacath">Malacath</option>
+                                    <option value="mara">Mara</option>
+                                    <option value="mehrunes-dagon">Mehrunes Dagon</option>
+                                    <option value="meridia">Meridia, Prince of Living Energies</option>
+                                    <option value="molag-bal">Molag Bal</option>
+                                    <option value="namira">Namira</option>
+                                    <option value="nocturnal">Nocturnal</option>
+                                    <option value="peryite">Peryite</option>
+                                    <option value="rajhin">Rajhin, Footpad, Thief God of the Khajiiti</option>
+                                    <option value="riddle'thar">Riddle'Thar</option>
+                                    <option value="sanguine">Sanguine</option>
+                                    <option value="sheogorath">Sheogorath, the Mad God</option>
+                                    <option value="sithis">Sithis</option>
+                                    <option value="sotha-sil">Sotha Sil, Mystery of Morrowind</option>
+                                    <option value="stendarr">Stendarr, God of Mercy</option>
+                                    <option value="talos">Talos, Tiber Septim, the Dragonborn</option>
+                                    <option value="tsun">Tsun, Nordic God of Trials against Adversity</option>
+                                    <option value="vermina">Vaermina</option>
+                                    <option value="y'ffre">Y'ffre, God of the Forest</option>
+                                    <option value="z'en">Z'en, God of Toil</option>
+                                    <option value="zenithar">Zenithar, God of Work and Commerce, Trader God</option>
+                                </select>
+                                <br>
+                                <label for="diety_bonus">Bonus: </label>
+                                <br>
+                                <input type="text">
+                            </td>
+                </tr>
+                <tr>
+                    <th class="agi_id-color" scope="row">Agility</th>
+                        <td>
+                            <label for="str_mod">Mod</label>
+                            <input id="str_mod" type="number" min="-20" max="20">
+                            <br>
+                            <label for="str_base">Base</label>
+                            <input id="str_base" type="number" min="-20" max="20">
+                        </td>
+                        <!--ARMOR-->
+                        <td>
+                            <label for="equip_feet" class="size"><strong>Feet</strong></label>
+                            <input id="equip_feet" type="text"><input type="number" min="0" max="20" name="feet_ac">AC
+                        </td>
+                        <td colspan="2">
+                                <label for="potions"><strong>Potions</strong></label>
+                                <br>
+                                <input type="text"> Amount: <input type="number" min="0" max="10">
+                                <br>
+                                <input type="text"> Amount: <input type="number" min="0" max="10">
+                                <br>
+                                <input type="text"> Amount: <input type="number" min="0" max="10">
+                                <br>
+                                <input type="text"> Amount: <input type="number" min="0" max="10">
+                            </td>
+    
+                </tr>
+                <tr>
+                    <th class="spd_id-color" scope="row">Speed</th>
+                        <td>
+                            <label for="str_mod">Mod</label>
+                            <input id="str_mod" type="number" min="-20" max="20">
+                            <br>
+                            <label for="str_base">Base</label>
+                            <input id="str_base" type="number" min="-20" max="20">
+                        </td>
+                        <!--ARMOR-->
+                        <td>
+                            <label for="equip_shield" class="size"><strong>Shield</strong></label>
+                            <input id="equip_shield" type="text"><input type="number" min="0" max="20" name="shield_ac">AC
+                        </td>
+                        <td colspan="1">
+                            <label for="soul_gems" class="size"><strong>Soul Gems</strong></label>
+                            <br>
+                            <label for="soul_gems_empty">Empty: </label>
+                            <input type="number" min="0" max="100">
+                            <br>
+                            <label for="soul_gems_filled">Filled: </label>
+                            <input type="number" min="0" max="100">
+                        </td>
+                        <td>
+                            <label for="initiative">Initiative<br>(AC-Speed Mod)</label>
+                            <input id="initiative" type="number" min="0" max="20">
+                        </td>
+                        <td>
+                                <label for="arrows"><strong>Arrows</strong></label>
+                                <br>
+                                <label for="arrows_type">Type: </label>
+                                <form class="first-line">
+                                        <select id="arrows_type" name="Arrow Type">
+                                                        
+                                            <option value="none">None</option>
+                                            <option value="Iron">Iron</option>
+                                            <option value="Steel">Steel</option>
+                                            <option value="Orcish">Orcish</option>
+                                            <option value="Elvish">Elvish</option>
+                                            <option value="Draugr">Draugr</option>
+                                            <option value="Falmer">Falmer</option>
+                                            <option value="Glass">Glass</option>
+                                            <option value="Ebony">Ebony</option>
+                                            <option value="Dragonbone">Dragonbone</option>
+                                        </select>
+                                        </form>
+                                    <br>
+                                <label for="arrows_current">Amount: </label>
+                                <input id="arrows_current" type="number" min="0" max="100">
+                            </td>
+                </tr>
+                <tr>
+                    <th class="end_id-color" scope="row">Endurance</th>
+                        <td>
+                            <label for="str_mod">Mod</label>
+                            <input id="str_mod" type="number" min="-20" max="20">
+                            <br>
+                            <label for="str_base" class="size">Base</label>
+                            <input id="str_base" type="number" min="-20" max="20">
+                        </td>
+                        <!--ARMOR-->
+                        <td>
+                            <label class="size" for="equip_necklace"><strong>Necklace</strong></label>
+                            <input id="equip_necklace" type="text"><input type="number" min="0" max="20" name="necklace_ac">AC
+                        </td>
+                        <td rowspan="3">
+                            <label class="size" for="weapons"><strong>Weapons</strong></label>
+                            <br>
+                            <input id="weapons" type="text">
+                            <span>Skill
+                            <select id="skill" name="skill">
+                                <option value="str">Str</option>
+                                <option value="int">Int</option>
+                                <option value="wil">Wil</option>
+                                <option value="agi">Agi</option>
+                                <option value="spd">Spd</option>
+                                <option value="end">End</option>
+                                <option value="prs">Prs</option>
+                                <option value="lck">Lck</option>
+                            </select>
+                            </span>
+                            <br>
+                            <span>Roll
+                                <input type="number" min="1" max="15">d<input type="number" min="2" max="20">+<input type="number" min="0" max="5">
+                            </span>
+                        <br>
+                        <br>
+                            <input id="weapons" type="text">
+                            <span>Skill
+                            <select id="skill" name="skill">
+                                <option value="str">Str</option>
+                                <option value="int">Int</option>
+                                <option value="wil">Wil</option>
+                                <option value="agi">Agi</option>
+                                <option value="spd">Spd</option>
+                                <option value="end">End</option>
+                                <option value="prs">Prs</option>
+                                <option value="lck">Lck</option>
+                            </select>
+                            </span>
+                            <br>
+                            <span>Roll
+                                <input type="number" min="1" max="15">d<input type="number" min="2" max="20">+<input type="number" min="0" max="5">
+                            </span>
+                        <br>
+                        <br>
+                            <input id="weapons" type="text">
+                            <span>Skill
+                            <select id="skill" name="skill">
+                                <option value="str">Str</option>
+                                <option value="int">Int</option>
+                                <option value="wil">Wil</option>
+                                <option value="agi">Agi</option>
+                                <option value="spd">Spd</option>
+                                <option value="end">End</option>
+                                <option value="prs">Prs</option>
+                                <option value="lck">Lck</option>
+                            </select>
+                            </span>
+                            <br>
+                            <span>Roll
+                                <input type="number" min="1" max="15">d<input type="number" min="2" max="20">+<input type="number" min="0" max="5">
+                            </span>
+                        <br>
+                        <br>
+                            <input id="weapons" type="text">
+                            <span>Skill
+                            <select id="skill" name="skill">
+                                <option value="str">Str</option>
+                                <option value="int">Int</option>
+                                <option value="wil">Wil</option>
+                                <option value="agi">Agi</option>
+                                <option value="spd">Spd</option>
+                                <option value="end">End</option>
+                                <option value="prs">Prs</option>
+                                <option value="lck">Lck</option>
+                            </select>
+                            </span>
+                            <br>
+                            <span>Roll
+                                <input type="number" min="1" max="15">d<input type="number" min="2" max="20">+<input type="number" min="0" max="5">
+                            </span>
+                        </td>
+                        <td rowspan="3" colspan="1">
+                            <table border="1">
+                                <thead><strong>Skill Profiencies</strong></thead>
+                                <th class="spd_id-color">Acrobatics</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                <td class="str_id-color">Hand to Hand</td>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                <tr>
+                                <th class="int_id-color">Alchemy</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                <td class="end_id-color">Heavy Armor</td>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                </tr>
+                                <tr>
+                                <th class="wil_id-color">Alteration</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                <td class="prs_id-color">Illusion</td>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="end_id-color">Armorer</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                <td class="spd_id-color">Light Armor</td>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="spd_id-color">Athletics</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                <td class="agi_id-color">Marksman</td>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="str_id-color">Blade</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                <td class="prs_id-color">Mercantile</td>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="end_id-color">Block</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                <td class="wil_id-color">Restoration</td>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="str_id-color">Blunt</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                <td class="agi_id-color">Security</td>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="int_id-color">Conjuration</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                <td class="agi_id-color">Sneak</td>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="wil_id-color">Destruction</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                <td class="prs_id-color">Speechcraft</td>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="int_id-color">Enchanting</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                <td></td>
+                            </tr>
+
+                            </table>
+                        </td>
+                        <td rowspan="3">
+                            <table border="1">
+                                <thead><strong>Passive Proficenices</strong></thead>
+                                <th class="wil_id-color">Animal Handling</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                <td class="int_id-color">Religion</td>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                <tr>
+                                <th class="int_id-color">Arcana</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                <td class="agi_id-color">Sleight of Hand</td>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                </tr>
+                                <tr>
+                                <th class="prs_id-color">Deception</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                <td class="wil_id-color">Survival</td>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="int_id-color">History</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="wil_id-color">Insight</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                                <td rowspan="2">Proficiency Bonus:
+                                    <br>
+                                <input type="number" min="0" max="5">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="prs_id-color">Intimidation</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="int_id-color">Investigation</th>
+                                <td>
+                                    <input type="radio">
+                                    </td>
+                            </tr>
+                            <tr>
+                                <th class="wil_id-color">Medicine</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="int_id-color">Nature</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="prs_id-color">Performance</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                              </tr>
+                            <tr>
+                                <th class="prs_id-color">Persuasion</th>
+                                <td>
+                                    <input type="radio">
+                                </td>
+                            </tr>
+
+                            </table>
+                        </td>
+                </tr>
+                <tr>
+                    <th class="prs_id-color" scope="row">Personality</th>
+                        <td>
+                            <label for="str_mod">Mod</label>
+                            <input id="str_mod" type="number" min="-20" max="20">
+                            <br>
+                            <label for="str_base">Base</label>
+                            <input id="str_base" type="number" min="-20" max="20">
+                        </td>
+                        <!--ARMOR-->
+                        <td>
+                            <label class="size" for="equip_ring"><strong>Ring</strong></label>
+                            <input id="equip_ring" type="text"><input type="number" min="0" max="20" name="ring_ac">AC
+                        </td>
+                </tr>
+                <tr>
+                    <th class="lck_id-color" scope="row">Luck</th>
+                        <td>
+                            <label for="str_mod">Mod</label>
+                            <input id="str_mod" type="number" min="-20" max="20">
+                            <br>
+                            <label for="str_base">Base</label>
+                            <input id="str_base" type="number" min="-20" max="20">
+                        </td>
+                    <!--ARMOR-->
+                    <td>
+                        <label class="bold size" for="equip_total"><strong>Total: </strong></label>
+                        <input type="number" name="equip_total" min="0" max="999">AC
+                    </td>
+                    <br>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

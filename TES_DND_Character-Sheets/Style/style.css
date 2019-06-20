@@ -1,0 +1,79 @@
+.first-line {
+    font-size: 18px;
+    display: inline;
+}
+.second-line {
+    font-size: 18px;
+    display: inline;
+}
+
+select {
+    font-size: 18px;
+}
+
+option {
+    font-size: 18px;
+}
+
+input {
+    font-size: 18px;
+}
+
+div {
+    text-align: center;
+}
+
+.size {
+    font-size: 18px;
+}
+
+caption {
+    font-size: 20px;
+}
+label {
+    text-align: left;
+}
+
+th {
+    font-size: 18px;
+}
+
+td {
+    font-size: 18px;
+}
+
+textarea {
+    font-size: 18px;
+}
+
+.str_id-color {
+    background-color: red;
+}
+
+.int_id-color {
+    background-color: aqua;
+}
+
+.wil_id-color {
+    background-color: green;
+}
+
+.agi_id-color {
+    background-color: purple;
+}
+
+.spd_id-color {
+    background-color: yellow;
+}
+
+.end_id-color {
+    background-color: gray;
+}
+
+.prs_id-color {
+    background-color: orange;
+}
+
+.lck_id-color {
+    background-color: limegreen
+}
